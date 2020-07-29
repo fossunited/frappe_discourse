@@ -21,7 +21,7 @@ def discourse_login():
     """Generate signature for discourse sso."""
     if frappe.session.user == 'Guest':
         print(frappe.local.form_dict)
-        redirect_url = '/api/method/frappe_discourse.frappe_discourse.doctype.discourse_settings.discourse_settings.discourse_login' # noqa
+        redirect_url = frappe.utils.get_url('/api/method/frappe_discourse.frappe_discourse.doctype.discourse_settings.discourse_settings.discourse_login') # noqa
         frappe.local.response["type"] = "redirect"
         client = frappe.local.form_dict.get("client")
         sig = frappe.local.form_dict.get("sig")
