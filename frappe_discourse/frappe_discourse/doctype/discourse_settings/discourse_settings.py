@@ -73,7 +73,7 @@ def discourse_login():
                 new_payload = make_payload(nonce)
                 our_signature = sign(new_payload, sso_secret)
                 frappe.local.response["type"] = "redirect"
-                frappe.local.response["location"]  = f'{settings.redirect_url}?sig={our_signature}&sso={new_payload.decode("utf-8")}'
+                frappe.local.response["location"]  = frappe.utils.get_url(f'{settings.redirect_url}?sig={our_signature}&sso={new_payload.decode("utf-8")}')
                 return
 
         frappe.throw("Invalid credentials")
