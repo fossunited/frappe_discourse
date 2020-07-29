@@ -29,7 +29,7 @@ def discourse_login():
 
         # creating this because frappe redirect-to uses single param
         client = f'{client}||{sig}||{sso}'
-        frappe.local.response["location"]  = f'/login?redirect-to={redirect_url}?client_redirect={client}' # noqa
+        frappe.local.response["location"]  = frappe.utils.get_url(f'/login?redirect-to={redirect_url}?client_redirect={client}') # noqa
 
     else:
 
