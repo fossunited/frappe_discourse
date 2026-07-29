@@ -1,0 +1,14 @@
+[project]
+name = "frappe_discourse"
+description = "Discourse SSO with Frappe"
+requires-python = ">=3.10"
+readme = "README.md"
+dependencies = [
+  "frappe",
+]
+
+[tool.uv]
+constraint-dependencies = [
+  "pypika",
+  "gunicorn",
+]
