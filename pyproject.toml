@@ -1,0 +1,20 @@
+[project]
+name = "frappe_discourse"
+authors = [
+    { name = "Shridhar Patil", email = "shridharpatil2792@gmail.com" }
+]
+description = "Discourse SSO with Frappe"
+requires-python = ">=3.10"
+readme = "README.md"
+license = { text = "MIT" }
+dynamic = ["version"]
+# frappe is installed and managed by bench, do not list it here
+dependencies = []
+
+[build-system]
+requires = ["flit_core >=3.4,<4"]
+build-backend = "flit_core.buildapi"
+
+# for bench and Frappe Cloud to accept the app on these frappe versions
+[tool.bench.frappe-dependencies]
+frappe = ">=15.0.0,<17.0.0"
